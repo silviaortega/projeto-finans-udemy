@@ -1,0 +1,44 @@
+#home {
+  background: #ffc107;
+  color: #ffffff;
+}
+
+#botao2:hover {
+  color: #ffc107; /* Cor do texto quando passar o mouse */
+}
+#botao3:hover {
+  color: #ffc107; /* Cor do texto quando passar o mouse */
+}
+
+.caixa {
+  padding: 60px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+footer p a {
+  margin: 5px 15px;
+}
+footer p a:hover {
+  text-decoration: none;
+}
+.special-link:hover {
+  text-decoration: none;
+  color: white !important;
+}
+
+.list-group-item:hover {
+  background-color: #ffc107;
+  color: white;
+}
+
+.progress-bar {
+  background-color: #ffc107;
+}
+.list-group-item:hover {
+  background-color: #ffc107;
+  color: white;
+}
+
+.progress-bar {
+  background-color: #ffc107;
+}

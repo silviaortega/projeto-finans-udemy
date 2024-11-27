@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <!-- Meta tags Obrigatórias -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+      integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/27e6f4417b.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <title>Finans - Planejamento Financeiro</title>
+  </head>
+  <body>
+    <!-- inicio cabeçalho -->
+    <header>
+      <nav class="navbar navbar-expand-md navbar-light bg-warning">
+        <div class="container">
+          <a href="#" class="navbar-brand">
+            <img src="../img/logo.png" alt="logotipo" width="142" />
+          </a>
+          <button
+            class="navbar-toggler"
+            data-toggle="collapse"
+            data-target="#nav-principal"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="nav-principal">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a href="/index.html" class="nav-link">Home</a>
+              </li>
+              <li class="nav-item">
+                <a href="/recursos.html" class="nav-link">Recursos</a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">Benefícios</a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">Preços</a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="btn btn-outline-light ml-5">Entrar</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!-- fim cabeçalho -->
+
+    <!-- inicio section Planejamento Financeiro -->
+    <section class="caixa">
+      <div class="container">
+        <h2 class="text-black-50">Planejamento Financeiro</h2>
+        <div class="row">
+          <div class="col-md-3">
+            <div class="list-group">
+              <a
+                href="../sub-recursos/planejamento-financeiro.html"
+                class="list-group-item list-group-item-action"
+              >
+                Planejamento financeiro
+              </a>
+              <a
+                href="despesas.html"
+                class="list-group-item list-group-item-action"
+              >
+                Controle de despesas e receitas
+              </a>
+              <a
+                href="emprestimos.html"
+                class="list-group-item list-group-item-action"
+              >
+                Gestão de empréstimos e financiamentos
+              </a>
+              <a
+                href="orcamentos.html"
+                class="list-group-item list-group-item-action"
+              >
+                Elaboração de orçamentos
+              </a>
+              <a
+                href="analises.html"
+                class="list-group-item list-group-item-action"
+              >
+                Análises de gastos
+              </a>
+              <a
+                href="poupanca.html"
+                class="list-group-item list-group-item-action"
+              >
+                Sugestões de poupança
+              </a>
+              <a
+                href="investimentos.html"
+                class="list-group-item list-group-item-action"
+              >
+                Informações sobre investimentos
+              </a>
+            </div>
+          </div>
+          <div class="col-md-9">
+            <h3>Defina suas Metas e Acompanhe seu Progresso</h3>
+            <p>
+              Com o planejamento financeiro, você pode definir metas
+              financeiras, criar orçamentos e acompanhar seu progresso ao longo
+              do tempo.
+            </p>
+
+            <!-- Formulário de Metas -->
+            <div class="form-group">
+              <label for="meta">Meta Financeira:</label>
+              <input
+                type="text"
+                class="form-control"
+                id="meta"
+                placeholder="Ex: Poupar para viagem"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="valorMeta">Valor da Meta (R$):</label>
+              <input
+                type="number"
+                class="form-control"
+                id="valorMeta"
+                placeholder="Ex: 5000"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="prazoMeta">Prazo (meses):</label>
+              <input
+                type="number"
+                class="form-control"
+                id="prazoMeta"
+                placeholder="Ex: 12"
+              />
+            </div>
+
+            <button class="btn btn-warning" onclick="calcularProgresso()">
+              Calcular Progresso
+            </button>
+
+            <!-- Exibição do Progresso -->
+            <div class="mt-4">
+              <h4>Progresso da Meta</h4>
+              <div class="progress">
+                <div
+                  id="barraProgresso"
+                  class="progress-bar"
+                  role="progressbar"
+                  style="width: 0%"
+                  aria-valuenow="0"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                ></div>
+              </div>
+              <p id="progressoTexto">Progresso: 0% completado</p>
+            </div>
+
+            <div class="mt-4">
+              <h4>Orçamento Mensal</h4>
+              <form id="orcamentoForm">
+                <div class="form-group">
+                  <label for="categoria">Categoria:</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="categoria"
+                    placeholder="Ex: Alimentação"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="valorOrcamento">Valor (R$):</label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="valorOrcamento"
+                    placeholder="Ex: 500"
+                  />
+                </div>
+
+                <button
+                  type="button"
+                  class="btn btn-warning"
+                  onclick="adicionarOrcamento()"
+                >
+                  Adicionar ao Orçamento
+                </button>
+              </form>
+
+              <h5 class="mt-4">Orçamento Criado:</h5>
+              <ul id="listaOrcamento" class="list-group"></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- fim section Planejamento Financeiro -->
+
+    <!-- inicio footer -->
+    <footer class="mt-4 mb-4">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8">
+            <p>
+              <a class="text-sm" href="">Home</a>
+              <a class="text-sm" href="">Recursos</a>
+              <a class="text-sm" href="">Benefícios</a>
+              <a class="text-sm" href="">Preços</a>
+            </p>
+          </div>
+          <div class="col-md-4 d-flex justify-content-end">
+            <a
+              class="ml-2 btn btn-primary"
+              target="_blank"
+              href="https://www.facebook.com/"
+            >
+              <i class="fa-brands fa-square-facebook"></i>
+            </a>
+            <a
+              class="ml-2 btn btn-danger"
+              target="_blank"
+              href="https://www.youtube.com/"
+            >
+              <i class="fa-brands fa-youtube"></i>
+            </a>
+            <a
+              class="ml-2 btn btn-primary"
+              target="_blank"
+              href="https://twitter.com/"
+            >
+              <i class="fa-brands fa-twitter"></i>
+            </a>
+            <a
+              class="ml-2 btn btn-dark text-danger"
+              target="_blank"
+              href="https://www.instagram.com/"
+            >
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="bg-warning text-light text-center py-3 mt-4">
+        <p class="text-dark">
+          Projeto construido para fins didáticos, com o objetivo de colocar em
+          prática os conhecimentos de HTML, CSS e Bootstrap 4 aprendidos na<a
+            id="link"
+            class="special-link text-black-50 h4 text-decoration-none"
+            target="_blank"
+            href="https://www.udemy.com/"
+            >Udemy.</a
+          >
+          Silvia Ortega
+        </p>
+        <p class="mb-0 text-black-50">
+          © 2024 Projeto Finans. Todos os direitos reservados.
+        </p>
+      </div>
+    </footer>
+    <!-- fim footer -->
+
+    <!-- Scripts -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8iR0tv7m5vjdpPR02F7P8cf2ttfvP4wB+AYqrCj7V5YOj0R7Pb7zK9C1lY82uVf"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO9ndL7p7kqsD7oB3HQUqvNKmTgLpdz8EMy5wAAgnC76BKnTNEKvjpNJtiP8KpB1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+      integrity="sha384-JfXyt77sJwscZG0xaFz7ssEoDkg6CQxbgPC8cnfW8Oxh6ZP5ZDfiQ4Vdb9jrREm9"
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      let totalMeta = 0;
+      let valorMeta = 0;
+      let prazoMeta = 0;
+
+      function calcularProgresso() {
+        valorMeta = document.getElementById("valorMeta").value;
+        prazoMeta = document.getElementById("prazoMeta").value;
+        totalMeta = valorMeta / prazoMeta;
+
+        let valorAtual = 0;
+        let progresso = 0;
+
+        // Exemplo de como calcular o progresso
+        if (valorMeta > 0 && prazoMeta > 0) {
+          progresso = (valorAtual / valorMeta) * 100;
+          document.getElementById("barraProgresso").style.width =
+            progresso + "%";
+          document.getElementById("progressoTexto").innerText =
+            "Progresso: " + progresso.toFixed(2) + "% completado";
+        }
+      }
+
+      function adicionarOrcamento() {
+        let categoria = document.getElementById("categoria").value;
+        let valor = document.getElementById("valorOrcamento").value;
+        let item = `<li class="list-group-item">${categoria} - R$ ${valor}</li>`;
+
+        document.getElementById("listaOrcamento").innerHTML += item;
+        document.getElementById("orcamentoForm").reset();
+      }
+    </script>
+  </body>
+</html>
